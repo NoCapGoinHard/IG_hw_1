@@ -103,7 +103,7 @@ class MeshDrawer {
 		this.texCoordLoc = gl.getAttribLocation(this.prog, 'texCoord');
 
 		this.texBuffer = gl.createBuffer();
-		
+
 		this.texture = gl.createTexture();
 	}
 
@@ -171,8 +171,8 @@ class MeshDrawer {
 		// some uniform parameter(s) of the fragment shader, so that it uses the texture.
 		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
 		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
-		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT); //tried some but REPEAT is the one that makes the texture appear
+		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT); // identical to the youtube video
 		gl.useProgram(this.prog);
 		gl.uniform1i(this.showTexLoc, 1);
 	}
